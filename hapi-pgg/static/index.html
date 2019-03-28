@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>index</title>
+         
+       <script> function my(){request.query.activitynum=document.getElementById("activitynum")}</script>
+     </head>
+     <body>
+
+      <div style="background-color:rgb(171, 224, 231)"><br>
+
+        <form action="/list" method="get">
+        
+        <br><button >ALL ACTIVITY LISTS</button><br><br>
+        
+          {{#each foo}}
+         <li> {{activitynum}} - {{activity}}</li>
+          {{/each}}
+          <hr width="100%" size="5px"> 
+      </form><br>
+      </div><br><br><br>
+
+
+
+
+      <div style="background-color:rgb(168, 240, 120)"><br>
+      <form action="/lists" method="get">
+    
+      <label for="acivitynum">Activity NO:</label>&nbsp&nbsp<input type="text" id="activitynum" name="activitynum">
+      <br> <br>
+      
+      <label for="acivity">Activity:</label>&nbsp&nbsp<input type="text" id="activity" disabled="disabled" value={{activity}} >
+      <br> <br>
+     
+      <br><button >FIND</button><br><hr width="100%" size="5px">
+    </form></div><br>
+
+
+    <div style="background-color:rgb(112, 179, 235)"><br>
+    <form action="/edit" method="post">
+     
+        <label for="acivitynum">Activity NO:</label>&nbsp&nbsp<input type="text" id="activitynum" name="activitynum">
+      <br> <br>
+      
+      <label for="acivity">Activity:</label>&nbsp&nbsp<input type="text" id="activity"name="activity" >
+      <br> <br>
+        <br><button>UPDATE</button><br> <br>{{status}}
+        <hr width="100%" size="5px">
+      </form></div><br>
+      
+      <div style="background-color:rgb(107, 97, 100)"><br>
+       <form action="/del" method="get">
+     
+        <label for="acivitynum">Activity NO:</label>&nbsp&nbsp<input type="text" id="activitynum" name="activitynum">
+      <br> <br>
+      
+        <br><button>DELETE</button><br> <br>{{delstatus}}
+        <hr width="100%" size="5px"> </form></div><br>
+      
+      <div style="background-color:rgb(235, 196, 90)"><br>
+       <form action="/save" method="post">
+     
+        <label for="acivity">Activity:</label>&nbsp&nbsp<input type="text" id="activity" name="activity">
+      <br> <br>
+      
+        <br><button>SAVE</button><br> <br>{{successtatus}}
+        <hr width="100%" size="5px"> </form>
+    </div><br>
+     
+  </body>
+  </html>
